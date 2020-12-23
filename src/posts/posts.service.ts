@@ -67,11 +67,11 @@ export class PostsService {
     return this.posts;
     }
 
-    findById(id: number) {
-        const found = this.posts.find(post => post.id === id);
-        if (found) {
-          return found
+    findById(id: number): Post {
+        const singlePost = this.posts.find(post => post.id === id);
+        if (singlePost) {
+          return singlePost
         }
-        return [];
+        return null;
     }
 }
